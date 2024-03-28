@@ -1,14 +1,7 @@
 #include "point.h"
 #include <iostream>
 
-Point::Point(QObject *parent)
-    : QObject{parent}
-{}
-
-
-Point::Point(double initx, double inity, QObject *parent) : x(initx), y(inity), QObject(parent) {
-
-}
+Point::Point(double initx, double inity) : x(initx), y(inity){}
 
 double Point::getX() {
     return x;

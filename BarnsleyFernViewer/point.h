@@ -5,19 +5,16 @@
 
 class Transform;
 
-class Point : public QObject
+class Point
 {
 private:
-    Q_OBJECT
-
     double x,y;
 
 public:
-    explicit Point(QObject *parent = nullptr);
     // default constructor initializes to (0, 0)
     Point();
     // This constructor takes initial values
-    Point(double initX, double initY, QObject *parent = nullptr);
+    Point(double initX, double initY);
     // The deconstructor does nothing because we didn't allocate any new memory
     ~Point();
     // Getter for the x value

@@ -12,12 +12,14 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     point.cpp \
-    transform.cpp
+    transform.cpp \
+    transformationmanager.cpp
 
 HEADERS += \
     mainwindow.h \
     point.h \
-    transform.h
+    transform.h \
+    transformationmanager.h
 
 FORMS += \
     mainwindow.ui
