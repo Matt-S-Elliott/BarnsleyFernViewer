@@ -8,6 +8,7 @@ MainWindow::MainWindow(BarnsleyFernViewerModel& model, QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     fernImagePointer = model.getFernImagePointer();
+    transformsPointer = model.getTransformsPointer();
     ui->setupUi(this);
 
     connect(ui->drawFernButton,
@@ -19,12 +20,21 @@ MainWindow::MainWindow(BarnsleyFernViewerModel& model, QWidget *parent)
             &BarnsleyFernViewerModel::fernUpdated,
             this,
             [this]{this->repaint();});
+
+    connect(&model,
+            &BarnsleyFernViewerModel::transformsUpdated,
+            this,
+            &MainWindow::updateTransformsList);
 }
 
 void MainWindow::paintEvent(QPaintEvent *) {
     QPainter painter(this);
     QRect rect = ui->drawPanel->frameGeometry();
     painter.drawImage(rect, *fernImagePointer);
+}
+
+void MainWindow::updateTransformsList() {
+
 }
 
 MainWindow::~MainWindow()

@@ -16,15 +16,19 @@ private:
     Q_OBJECT
 
     QImage* fernImagePointer;
+    std::vector<Transform>* transformsPointer;
+    Ui::MainWindow *ui;
 
 public:
+
     MainWindow(BarnsleyFernViewerModel& model, QWidget *parent = nullptr);
 
     void paintEvent(QPaintEvent *);
 
     ~MainWindow();
 
-private:
-    Ui::MainWindow *ui;
+public slots:
+        void updateTransformsList();
+
 };
 #endif // MAINWINDOW_H

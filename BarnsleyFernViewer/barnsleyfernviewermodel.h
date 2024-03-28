@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QPointF>
 #include <QImage>
+#include <vector>
 
 class BarnsleyFernViewerModel : public QObject
 {
@@ -25,6 +26,7 @@ class BarnsleyFernViewerModel : public QObject
 public:
     explicit BarnsleyFernViewerModel(QObject *parent = nullptr);
     QImage* getFernImagePointer();
+    std::vector<Transform>* getTransformsPointer();
 
 public slots:
     void setIterationMax(int iterations);
@@ -39,6 +41,7 @@ public slots:
 
 signals:
     void fernUpdated();
+    void transformsUpdated();
 };
 
 #endif // BARNSLEYFERNVIEWERMODEL_H

@@ -21,6 +21,8 @@ public:
 
     TransformationManager();
 
+    std::vector<Transform>* getTransformsPointer();
+
     void addTransformation();
 
     // Adds a tr with all values set to 0

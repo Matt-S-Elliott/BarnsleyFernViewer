@@ -2,9 +2,15 @@
 #include <vector>
 
 TransformationManager::TransformationManager() {
+    currentSeed = 1;
     currentTotalProbability = 0;
     rand = QRandomGenerator::securelySeeded();
 }
+
+std::vector<Transform>* TransformationManager::getTransformsPointer() {
+    return &transformations;
+}
+
 
 void TransformationManager::addTransformation() {
     transformations.push_back(Transform(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
@@ -33,10 +39,19 @@ void TransformationManager::transformPoint(Point& pt) {
 void TransformationManager::setSeed(qint32 seed) {
     currentSeed = seed;
     rand = QRandomGenerator(seed);
+    currentSeedMode = TransformationManager::SeedMode::Deterministic;
+}
+
+void TransformationManager::useSecureSeed() {
+    rand = QRandomGenerator::securelySeeded();
+    currentSeedMode = TransformationManager::SeedMode::Secure;
 }
 
 void TransformationManager::resetRand() {
-    rand = QRandomGenerator(currentSeed);
+    if (currentSeedMode == TransformationManager::SeedMode::Deterministic)
+        rand = QRandomGenerator(currentSeed);
+    else
+        rand = QRandomGenerator::securelySeeded();
 }
 
 Transform* TransformationManager::selectTransform() {

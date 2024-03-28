@@ -19,10 +19,16 @@ BarnsleyFernViewerModel::BarnsleyFernViewerModel(QObject *parent)
     transformationManager.addTransformation(Transform (-.15, .28, 0.0, .26, .24, .44, 0.07));
     fernImage = QImage(1000, 1000, QImage::Format_RGBA8888);
     fernImage.fill(Qt::white);
+
+    emit transformsUpdated();
 }
 
 QImage* BarnsleyFernViewerModel::getFernImagePointer() {
     return &fernImage;
+}
+
+std::vector<Transform>* BarnsleyFernViewerModel::getTransformsPointer() {
+    return transformationManager.getTransformsPointer();
 }
 
 void BarnsleyFernViewerModel::setIterationMax(int iterations) {
