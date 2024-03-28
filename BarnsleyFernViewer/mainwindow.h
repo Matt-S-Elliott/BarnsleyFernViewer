@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "barnsleyfernviewermodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -11,10 +12,16 @@ QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
+private:
     Q_OBJECT
 
+    QImage* fernImagePointer;
+
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(BarnsleyFernViewerModel& model, QWidget *parent = nullptr);
+
+    void paintEvent(QPaintEvent *);
+
     ~MainWindow();
 
 private:

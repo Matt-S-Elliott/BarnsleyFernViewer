@@ -35,15 +35,15 @@ void Transform::setProbability(double newProb) {
 }
 
 Point Transform::operator*(Point point) {
-    double newX = ((parameters[0] * point.getX()) + (parameters[1] * point.getY()) + parameters[2]);
-    double newY = ((parameters[3] * point.getX()) + (parameters[4] * point.getY()) + parameters[5]);
+    double newX = ((parameters[0] * point.x) + (parameters[1] * point.y) + parameters[2]);
+    double newY = ((parameters[3] * point.x) + (parameters[4] * point.y) + parameters[5]);
     Point result(newX, newY);
     return result;
 }
 
 Point& operator*=(Point& point, Transform transform) {
-    double newX = ((transform.parameters[0] * point.getX()) + (transform.parameters[1] * point.getY()) + transform.parameters[2]);
-    double newY = ((transform.parameters[3] * point.getX()) + (transform.parameters[4] * point.getY()) + transform.parameters[5]);
+    double newX = ((transform.parameters[0] * point.x) + (transform.parameters[1] * point.y) + transform.parameters[2]);
+    double newY = ((transform.parameters[3] * point.x) + (transform.parameters[4] * point.y) + transform.parameters[5]);
     point.x = newX;
     point.y = newY;
     return point;

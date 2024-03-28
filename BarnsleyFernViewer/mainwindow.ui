@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1200</width>
-    <height>1060</height>
+    <height>1020</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: black;</string>
+     <string notr="true">background: transparent;</string>
     </property>
    </widget>
    <widget class="QWidget" name="transformListWidget" native="true">
@@ -71,45 +71,19 @@
      </widget>
     </widget>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1200</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background: lightgrey;</string>
-   </property>
-   <property name="nativeMenuBar">
-    <bool>false</bool>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
+   <widget class="QPushButton" name="drawFernButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>370</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
     </property>
-    <addaction name="actionSave"/>
-    <addaction name="actionLoad"/>
-    <addaction name="actionHelp"/>
-    <addaction name="actionAbout"/>
-   </widget>
-   <widget class="QMenu" name="menuExport">
-    <property name="title">
-     <string>Export</string>
+    <property name="text">
+     <string>Draw Fern</string>
     </property>
-    <addaction name="actionExport_as_png"/>
-    <addaction name="actionExport_pdf"/>
    </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuExport"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar">
-   <property name="styleSheet">
-    <string notr="true">background: lightgrey;</string>
-   </property>
   </widget>
   <action name="actionSave">
    <property name="text">
