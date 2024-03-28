@@ -10,10 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    point.cpp \
+    transform.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    point.h \
+    transform.h
 
 FORMS += \
     mainwindow.ui
