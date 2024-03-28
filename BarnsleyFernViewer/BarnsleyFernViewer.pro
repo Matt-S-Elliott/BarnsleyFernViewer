@@ -14,14 +14,16 @@ SOURCES += \
     mainwindow.cpp \
     point.cpp \
     transform.cpp \
-    transformationmanager.cpp
+    transformationmanager.cpp \
+    transformwidget.cpp
 
 HEADERS += \
     barnsleyfernviewermodel.h \
     mainwindow.h \
     point.h \
     transform.h \
-    transformationmanager.h
+    transformationmanager.h \
+    transformwidget.h
 
 FORMS += \
     mainwindow.ui

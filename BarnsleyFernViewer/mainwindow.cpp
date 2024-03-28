@@ -34,7 +34,9 @@ void MainWindow::paintEvent(QPaintEvent *) {
 }
 
 void MainWindow::updateTransformsList() {
+    for (Transform tr : *transformsPointer) {
 
+    }
 }
 
 MainWindow::~MainWindow()
