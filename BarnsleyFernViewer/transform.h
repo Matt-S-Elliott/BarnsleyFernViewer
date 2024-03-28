@@ -2,20 +2,28 @@
 #define TRANSFORM_H
 
 #include <QObject>
+#include <vector>
+
 class Point;
 
 class Transform
 {
 private:
     // The parameters of the transform.
-    double a, b, c, d, e, f;
+    std::vector<double> parameters;
+    double probability;
 public:
+    Transform();
     // Constructs a transform from the 6 provided doubles.
-    Transform(double a, double b, double c, double d, double e, double f);
+    Transform(double a, double b, double c, double d, double e, double f, double probability);
 
     // Takes an array that can contain at least 6 doubles.
     // Puts the transform values a, b, c, d, e, and f into the first 6 values of the array in order.
-    void getParameters(double* arr);
+    std::vector<double>* getParameters();
+
+    double getProbability();
+
+    void setProbability(double newProb);
 
     // Allows operations like "Point pt = transform * otherPoint"
     Point operator*(Point point);

@@ -6,7 +6,9 @@
 #include <iostream>
 
 Transform::Transform() {
-    probability = 0
+    for (int i =0; i < 6; i++)
+        parameters.push_back(0);
+    probability = 0;
 }
 
 Transform::Transform(double a, double b, double c, double d, double e, double f, double probability) : probability(probability) {
