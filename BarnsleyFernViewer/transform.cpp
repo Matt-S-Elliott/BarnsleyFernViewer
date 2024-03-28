@@ -29,7 +29,7 @@ double Transform::getProbability() {
 }
 
 void Transform::setProbability(double newProb) {
-    if (newProb <= 0 || newProb > 100)
+    if (newProb <= 0 || newProb > 1)
         return;
     probability = newProb;
 }
