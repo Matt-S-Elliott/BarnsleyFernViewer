@@ -17,8 +17,6 @@ private:
 public:
     TransformationManager();
 
-    TransformationManager(qint32 seed);
-
     void addTransformation();
 
     // Adds a tr with all values set to 0
