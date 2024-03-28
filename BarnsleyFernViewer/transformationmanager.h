@@ -7,14 +7,18 @@
 
 class TransformationManager
 {
+    enum class SeedMode {Secure, Deterministic};
+
 private:
     std::vector<Transform> transformations;
     double currentTotalProbability;
     Transform* selectTransform();
     QRandomGenerator rand;
     qint32 currentSeed;
+    TransformationManager::SeedMode currentSeedMode;
 
 public:
+
     TransformationManager();
 
     void addTransformation();
@@ -34,7 +38,10 @@ public:
     // Manually set seed for the rng
     void setSeed(qint32 seed);
 
-    // Resets the rng
+    // Resets the rng to a secure seed
+    void useSecureSeed();
+
+    // Resets the rng with the current seed
     void resetRand();
 };
 
